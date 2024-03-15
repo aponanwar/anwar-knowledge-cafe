@@ -4,7 +4,7 @@ import { IoBookmarksSharp } from "react-icons/io5";
 const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead}) => {
     // console.log(blog);
 
-    const { title, cover, reading_time, author, author_img, posted_date, hashtags} = blog;
+    const { id, title, cover, reading_time, author, author_img, posted_date, hashtags} = blog;
     return (
         <div className='mb-20'>
             <img className='w-full rounded-xl' src={cover}></img>
@@ -30,7 +30,7 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead}) => {
                     hashtags.map((hash, idx) => <span key={idx} className='m-2'><a href="">#{hash}</a></span>)
                 }
             </p>
-            <button onClick={() => handleMarkAsRead(reading_time)} className='btn mt-10 text-purple-600 font-bold underline ml-2'> Mark as Read</button>
+            <button onClick={() => handleMarkAsRead(id, reading_time)} className='btn mt-10 text-purple-600 font-bold underline ml-2'> Mark as Read</button>
         </div>
     );
 };
